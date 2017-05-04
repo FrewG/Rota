@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+.msg-val {
+	color: red;
+}
+
+.msg-success {
+	color: green;
+}
+
+.container-table {
+	display: table;
+}
+
+.vertical-center-row {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.borderless td, .borderless th {
+	border: none;
+}
+
+

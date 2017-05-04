@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/theme-default.css">
+<link rel="stylesheet" href="./css/theme-blue.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/custom.css">
+</head>
+<body ng-app="myApp" class="container">
+	<div ng-controller="EmployeeController">
+		<h1>Employee Rota Management</h1>
+		<form name="employeeForm">
+
+			<table class='table borderless'>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Full_Name</th>
+						<th>Email Address</th>
+						<th>Works On</th>
+					</tr>
+				</thead>
+				<tr ng-repeat="row in employees">
+					<td><span ng-bind="row.id"></span></td>
+
+					<td><span ng-bind="row.fullName"></span></td>
+
+					<td><span ng-bind="row.email"></span></td>
+
+					<td><span ng-bind="row.worksOn"></span></td>
+					<td>
+				</tr>
+			</table>
+			<p class="bg-info info-msg" id="info1">{{Message}}</p>
+			<div class="form-group">
+				<label class=blue_font>Full Name</label> <input class=form-control
+					type="text" id="Name" ng-model="employeeForm.fullName"
+					placeholder="Full Name">
+			</div>
+
+			<div class="form-group">
+				<label class=blue_font>Email Address</label> <input
+					class=form-control type="text" id="Email"
+					ng-model="employeeForm.email" placeholder="Email">
+			</div>
+
+			<div class="form-group">
+				<label class=blue_font>Works On</label> <input class=form-control
+					type="text" id="shift" ng-model="employeeForm.worksOn"
+					placeholder="Works on">
+			</div>
+
+			<div class="btn-wrapper">
+				<div class="row-gutter-5">
+					<div class="col-md-3 col-xs-4 col-sm-4">
+						<button class="btn btn_blue" type="button"
+							data-ng-click="create()" id="Create">Create</button>
+					</div>
+					<div class="col-md-3 col-xs-4 col-sm-4">
+						<button class="btn btn_blue" type="button"
+							data-ng-click="refresh()" id="refresh">Refresh</button>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class=blue_font>ID</label> <input class=form-control
+					type="text" id="ID" ng-model="employeeForm.id"
+					placeholder="Please enter ID to delete or update">
+			</div>
+			<div class="btn-wrapper">
+				<div class="row-gutter-5">
+					<div class="col-md-3 col-xs-4 col-sm-4">
+						<button class="btn btn_blue" type="button"
+							data-ng-click="deleteRec()" id="Delete">Delete</button>
+					</div>
+					<div class="col-md-3 col-xs-4 col-sm-4">
+						<button class="btn btn_blue" type="button"
+							data-ng-click="update()" id="Update">Update</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/angular-resource.min.js"></script>
+	<script src="./js/app.js"></script>
+</body>
+</HTML>
